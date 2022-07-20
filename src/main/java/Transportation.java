@@ -17,10 +17,6 @@ public class Transportation {
 
     public Transportation() {}
 
-    public Transportation(String gearBox, int maxPassenger) {
-        this.gearBox = gearBox;
-        this.maxPassenger = maxPassenger;
-    }
 
     // 버스 번호 호출
     public void tsCall(int tsNum, String gearBox) {
@@ -35,9 +31,9 @@ public class Transportation {
     public int changeSpeed(int speed) {
         this.speed += speed;
         if (speed > 0) {
-            this.fuel -= this.speed * 0.2;
+            this.fuel -= (float)this.speed * 0.2f;
         } else {
-            this.fuel -= this.speed * 0.1;
+            this.fuel -= (float)this.speed * 0.1f;
         }
 
         if (Objects.equals(this.gearBox, "운행중") && this.speed > 10) {

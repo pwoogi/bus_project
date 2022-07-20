@@ -1,6 +1,9 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Transportation ts = new Transportation();
-        ts.changeSpeed(500);
+        Taxi ti = new Taxi(100);
+        ti.payment("아름다운집",3);
+
     }
 }

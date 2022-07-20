@@ -5,12 +5,10 @@ public class Bus extends Transportation {
         this.maxPassenger = 30;
 
     }
-
-    public Bus(String gearBox, int maxPassenger) {
-        super(gearBox,maxPassenger);
-        this.gearBox = gearBox;
-
+    public Bus(){
+        super();
     }
+
     @Override
     public void tsCall(int tsNum, String gearBox) {
         System.out.println("현재 버스는 " + this.tsNum + "번 버스이며 상태는 " + this.gearBox + "입니다");
