@@ -1,16 +1,17 @@
 public class Bus extends Transportation {
+    protected int maxPassenger;
 
     public Bus(int tsNum) {
         super(tsNum);
-        this.maxPassenger = 30;
-
     }
+
     public Bus(){
         super();
+        this.maxPassenger = 30;
     }
 
     @Override
-    public void tsCall(int tsNum, String gearBox) {
+    public void tsCall(int tsNum) {
         System.out.println("현재 버스는 " + this.tsNum + "번 버스이며 상태는 " + this.gearBox + "입니다");
     }
 

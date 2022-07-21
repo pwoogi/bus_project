@@ -1,33 +1,36 @@
 import java.util.Objects;
 
 public class Transportation {
+    //대중교통 인스턴스
     protected int tsNum;
-    protected int fuel = 100;
-    protected int speed = 0;
-    protected String gearBox = "운행중";
-    protected int maxPassenger = 50;
+    protected int fuel;
+    protected int speed;
+    protected String gearBox;
+    protected int maxPassenger;
     protected int passenger;
     protected int price;
 
     //생성자
+    public Transportation(){
+        this.fuel = 100;
+        this.speed = 0;
+        this.gearBox = "운행중";
+        this.maxPassenger = 50;
+        this.tsNum = 100;
+    }
 
     public Transportation(int tsNum) {
+        this();
         this.tsNum = tsNum;
     }
 
-    public Transportation() {}
-
-
     // 버스 번호 호출
-    public void tsCall(int tsNum, String gearBox) {
-        System.out.println("현재 해당 " + tsNum + "번 대중교통 정보는 " + gearBox + "입니다");
+    public void tsCall(int tsNum) {
+        System.out.println("현재 해당 " + tsNum + "번 대중교통 정보는 " + this.gearBox + "입니다");
     }
 
-    //속도변경 메서드
-    //상태 : 속도를 입력하면 운행상태가 "운행중"인지를 확인
-    // 만약 아니면 "차고지행"으로 상태를 변경하고 메시지를 띄움
-    //속도 : 10보다 작거나 같을때 주유경고 메시지
-    // 메시지 위치 오류 : 수정필요
+    //속도를 올리고 내리면 기름이 소비되는 구조의 메서드
+    //기름이 10이하로 떨어지면 '주유 경고' 메시지
     public int changeSpeed(int speed) {
         this.speed += speed;
         if (speed > 0) {
@@ -56,7 +59,7 @@ public class Transportation {
         }
         return this.speed;
     }
-
+    // 승객과 요금을 확인할 수 있는 메서드
     public void takePassenger(int passenger, int price) {
         this.price = price;
         this.passenger += passenger;
@@ -73,6 +76,5 @@ public class Transportation {
             this.gearBox = "차고지행";
         }
     }
-
 }
 
