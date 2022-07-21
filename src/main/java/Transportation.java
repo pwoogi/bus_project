@@ -15,8 +15,8 @@ public class Transportation {
         this.fuel = 100;
         this.speed = 0;
         this.gearBox = "운행중";
-        this.maxPassenger = 50;
         this.tsNum = 100;
+        this.maxPassenger = 50;
     }
 
     public Transportation(int tsNum) {
@@ -66,7 +66,7 @@ public class Transportation {
         int totalPrice = this.passenger * this.price;
         int totalSeat = 0;
 
-        if (this.gearBox == "운행중" && this.passenger < maxPassenger) {
+        if (Objects.equals(this.gearBox, "운행중") && this.passenger < this.maxPassenger) {
             totalSeat += maxPassenger - this.passenger;
             System.out.println("방금 탄 승객은 " + this.passenger + " 명이며 요금은 현재 " + totalPrice + " 원입니다");
             System.out.println("남은 좌석은 " + totalSeat + " 개입니다.");
